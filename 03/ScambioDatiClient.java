@@ -19,16 +19,25 @@ import java.net.*;
          * InputStream Socket.getInputStream();
          */
         try{
+            //Mi connetto al server
+            InetAddress ia = InetAddress.getLocalHost();
+            InetSocketAddress isa = new InetSocketAddress(ia, 65435);
+            sClient.connect(isa);
+
+            //leggo l'input da stdin
             InputStreamReader input = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(input);
             String line = br.readLine();
             System.out.println(String.format("Sto mandando il messaggio %s...", line));
 
-            OutputStream toServer = sClient.getOutputStream();
             /**
+             * Mando l'input al server
              * La funzione write(byte[], offset, len) passa i dati a livello Transport (NON AL CANALE)
              */
-            toServer.write(line.getBytes(), 0, line.length());             
+            OutputStream toServer = sClient.getOutputStream();
+            toServer.write(line.getBytes(), 0, line.length()); 
+            
+            sClient.close();
         }catch(Exception e){
             e.printStackTrace();
         }
