@@ -22,6 +22,7 @@ import java.net.*;
              System.out.println(String.format("Indirizzo client: %s, porta %d\n", toClient.getPort(), sServer.getLocalPort()));
 
              Thread.sleep(1000);
+             sServer.close();
 
          }catch(Exception e){
              e.printStackTrace();
