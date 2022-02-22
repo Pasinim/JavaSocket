@@ -22,7 +22,7 @@ public class SocketClient {
              * la port a da utilizzare, tuttavia non è la scelta ottimale per il server
              * Socket Address Server:
              */
-            InetSocketAddress isa = new InetSocketAddress(ia, 54104); //57461 porta stampata in SocketServer da sServer.getLocalPort();
+            InetSocketAddress isa = new InetSocketAddress(ia, Integer.parseInt(args[0])); //57461 porta stampata in SocketServer da sServer.getLocalPort();
             sClient.connect(isa);
             System.out.println(String.format("Porta locale: %d, indirizzo: %s, porta: %d", sClient.getLocalPort(), sClient.getInetAddress(), sClient.getPort()));
             sClient.close();
