@@ -17,7 +17,7 @@ public class ServerHomework {
             
             //leggo input
             InputStream fromClient = toClient.getInputStream();
-            
+
             //ciclo molto brutto ma mi serve per testare
             boolean x = true;
             while(x){
@@ -25,6 +25,7 @@ public class ServerHomework {
                 if (new String(buffer).trim().equals("."))
                     	break;
                 System.out.println(String.format("\t %s", new String(buffer)));
+                //"pulisco" il buffer, brutto ma mi serve per testare
                 buffer = new byte[len_buffer];
             }
             
