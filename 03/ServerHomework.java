@@ -13,15 +13,19 @@ public class ServerHomework {
             sServer = new ServerSocket(0);
             System.out.println(String.format("Indirizzo %s, porta: %d", sServer.getInetAddress(), sServer.getLocalPort()));
             toClient = sServer.accept();
+            System.out.println("Connessione accettata");
             
             //leggo input
             InputStream fromClient = toClient.getInputStream();
-            while (true){
+            
+            //ciclo molto brutto ma mi serve per testare
+            boolean x = true;
+            while(x){
                 fromClient.read(buffer);
-                if (buffer[0] == '.') 
-                    break;
+                if (new String(buffer).trim().equals("."))
+                    	break;
                 System.out.println(String.format("\t %s", new String(buffer)));
-
+                buffer = new byte[len_buffer];
             }
             
             

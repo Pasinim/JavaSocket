@@ -67,5 +67,3 @@ Metodi utili:
 - `String.split(String regex, int limit)`: Splitta la stringa a secondo della regex
 
 - `StringTokenizer.nextToken()`Permette di ottenere la successiva sottostringa delimitata dal separatore indicato
-
-

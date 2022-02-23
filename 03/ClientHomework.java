@@ -19,22 +19,18 @@ public class ClientHomework {
             // BufferedReader br = new BufferedReader(input);
 
             Scanner input = new Scanner(System.in);
-            while (input.next() != "."){
+            boolean x = true;
+            while (x){
                 String line = input.nextLine();
                 System.out.println(String.format("Sto mandando il messaggio %s...", line));
 
                 //mando il messaggio al server
                 OutputStream toServer = sClient.getOutputStream();
-                toServer.write(line.getBytes());
-
-              
+                toServer.write(line.getBytes());             
             }
             input.close();
             sClient.close();
-
-            
-
-
+       
         }catch(Exception e ){
             e.printStackTrace();
         }
