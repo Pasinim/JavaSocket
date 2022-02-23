@@ -20,7 +20,6 @@ public class ClientDatagram {
             DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
             dp.setSocketAddress(isa);
             sClient.send(dp);
-            sClient.send(dp);
         }catch(Exception e){
             e.printStackTrace();
         }
