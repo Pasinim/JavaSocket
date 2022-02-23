@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class LeoServer{
+public class Server{
 
     public static void main(String[] args) {
         ServerSocket sSrv;
